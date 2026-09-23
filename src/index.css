@@ -251,6 +251,7 @@ img { display: block; max-width: 100%; }
 .gallery__item--4, .gallery__item--5, .gallery__item--6, .gallery__item--7, .gallery__item--8 { min-height: 220px; }
 .gallery__photo { position: absolute; inset: 0; }
 .gallery__item--4 .gallery__photo img { object-position: center top; }
+.gallery__item--5 .gallery__photo img { object-position: center top; }
 .gallery__photo .photo-placeholder { background: linear-gradient(145deg, #e4cd9a, #77502b); }
 .gallery__item:not(:disabled) { cursor: zoom-in; }
 .gallery__label { position: absolute; z-index: 2; bottom: 12px; left: 13px; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; text-shadow: 0 1px 7px #2e1d10; }
