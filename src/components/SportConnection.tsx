@@ -10,7 +10,7 @@ export function SportConnection() {
         <div><p className="eyebrow">Nossa origem</p><h2>Entre o esporte<br />e a boa mesa.</h2></div>
         <div className="sport-connection__text">
           <p>Integrada ao universo Drimo, a Eat &amp; Drink recebe quem quer completar o dia com uma boa refeição, um drink ou um encontro sem pressa.</p>
-          <ButtonLink href={buildWhatsappLink(whatsappMessages.information)} cta="sport-whatsapp" event="ClickWhatsApp" payload={{ location: 'sport_connection' }} variant="ghost">Conhecer a Drimo <ArrowUpRight size={16} /></ButtonLink>
+          <ButtonLink href={buildWhatsappLink(whatsappMessages.information)} cta="sport-whatsapp" event="ClickWhatsApp" payload={{ location: 'sport_connection' }} variant="primary">Conhecer a Drimo <ArrowUpRight size={16} /></ButtonLink>
         </div>
       </div>
     </section>

@@ -13,8 +13,12 @@ import quintaVinhoImage from '../assets/drimo/quinta-vinho-8837.jpg'
 import pratoFileImage from '../assets/drimo/prato-file-8755.jpg'
 import pratoPeixeImage from '../assets/drimo/prato-peixe-4644.jpg'
 import ambienteImage from '../assets/drimo/ambiente-4315.jpg'
+import ambienteExteriorImage from '../assets/drimo/ambiente-1980.jpg'
+import ambienteEntranceImage from '../assets/drimo/ambiente-3846.jpg'
+import ambienteCourtImage from '../assets/drimo/ambiente-3887.jpg'
 import assadoVariedadeImage from '../assets/drimo/assado-variedade-8488.jpg'
 import petiscosImage from '../assets/drimo/petiscos-6653.jpg'
+import feijoadaCardImage from '../assets/drimo/feijoada-card.jpg'
 import rischeLight from '../assets/drimo/fonts/Rische-Light.woff2'
 import rischeRegular from '../assets/drimo/fonts/Rische-Regular.woff2'
 import rischeMedium from '../assets/drimo/fonts/Rische-Medium.woff2'
@@ -28,6 +32,7 @@ export const drimoAssets = {
   favicon: logoDark,
   hero: heroImage,
   about: ambienteImage,
+  aboutCarousel: [ambienteImage, ambienteExteriorImage, ambienteEntranceImage, ambienteCourtImage],
   sharing: assadosImage,
   delivery: parmegianaDetailImage,
   chefDiego: chefProfessionalImage,
@@ -46,7 +51,7 @@ export const drimoAssets = {
     parmegiana: heroImageAlt,
     wine: quintaVinhoImage,
     happyHour: drinkImage,
-    feijoada: assadoVariedadeImage,
+    feijoada: feijoadaCardImage,
     weekend: assadosImage,
     confraria: undefined as string | undefined,
   },
@@ -57,6 +62,8 @@ export const drimoAssets = {
     chef: chefProfessionalImage,
     experience: quintaVinhoImage,
     behindScenes: chefContextImage,
+    facade: ambienteExteriorImage,
+    court: ambienteCourtImage,
   },
 } as const
 

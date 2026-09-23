@@ -10,7 +10,9 @@ const galleryItems = [
   { category: 'Ambiente', src: drimoAssets.gallery.environment, alt: 'Ambiente da Drimo Eat & Drink' },
   { category: 'Chef', src: drimoAssets.gallery.chef, alt: 'Chef em ação na cozinha' },
   { category: 'Experiência', src: drimoAssets.gallery.experience, alt: 'Momento à mesa na Drimo' },
-  { category: 'Bastidores', src: drimoAssets.gallery.behindScenes, alt: 'Chef Diego nos bastidores da Drimo' },
+  { category: 'Bastidores', src: drimoAssets.gallery.behindScenes, alt: 'Bastidores da Drimo' },
+  { category: 'Fachada', src: drimoAssets.gallery.facade, alt: 'Fachada e entrada da Drimo Sport Club' },
+  { category: 'Quadras', src: drimoAssets.gallery.court, alt: 'Quadras e área externa da Drimo Sport Club' },
 ]
 
 export function Gallery() {

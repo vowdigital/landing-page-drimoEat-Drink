@@ -1,13 +1,59 @@
+import { useEffect, useState } from 'react'
 import { drimoAssets } from '../config/assets'
 import { PhotoFrame } from './PhotoFrame'
 import { SectionHeading } from './SectionHeading'
 
 export function About() {
+  const slides = drimoAssets.aboutCarousel
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reducedMotion || isPaused || slides.length < 2) return
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % slides.length)
+    }, 4800)
+
+    return () => window.clearInterval(timer)
+  }, [isPaused, slides.length])
+
   return (
     <section className="section about" aria-labelledby="about-title">
       <div className="shell about__grid">
         <div className="about__image-wrap" data-reveal>
-          <PhotoFrame src={drimoAssets.about} alt="Ambiente e cozinha da Drimo Eat & Drink" label="Ambiente ou cozinha" className="about__photo" />
+          <div
+            className="about__carousel"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onFocus={() => setIsPaused(true)}
+            onBlur={() => setIsPaused(false)}
+            aria-label="Fotos do ambiente da Drimo"
+          >
+            {slides.map((src, index) => (
+              <PhotoFrame
+                key={src}
+                src={src}
+                alt={`Ambiente da Drimo, foto ${index + 1}`}
+                label="Ambiente da Drimo"
+                className={`about__photo about__carousel-slide ${index === activeIndex ? 'is-active' : ''}`}
+                priority={index === 0}
+              />
+            ))}
+            <div className="about__carousel-controls" aria-label="Selecionar foto do ambiente">
+              {slides.map((src, index) => (
+                <button
+                  key={src}
+                  type="button"
+                  className={`about__carousel-dot ${index === activeIndex ? 'is-active' : ''}`}
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Mostrar foto ${index + 1}`}
+                  aria-pressed={index === activeIndex}
+                />
+              ))}
+            </div>
+          </div>
           <span className="about__caption">Gastronomia · encontros · experiências</span>
         </div>
         <div className="about__content" data-reveal>

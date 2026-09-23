@@ -3,6 +3,7 @@ import { drimoAssets } from '../config/assets'
 import { buildWhatsappLink, links, whatsappMessages } from '../config/links'
 import { ButtonLink } from './ButtonLink'
 import { PhotoFrame } from './PhotoFrame'
+import { WhatsAppIcon } from './WhatsAppIcon'
 
 const benefits = [
   { icon: MousePointerClick, label: 'Cardápio online' },
@@ -26,7 +27,7 @@ export function Delivery() {
           </div>
           <div className="button-row">
             <ButtonLink href={links.delivery} cta="delivery-order" event="ClickDelivery" payload={{ location: 'delivery' }}>Pedir delivery <ArrowUpRight aria-hidden="true" size={17} /></ButtonLink>
-            <ButtonLink href={buildWhatsappLink(whatsappMessages.information)} cta="delivery-whatsapp" event="ClickWhatsApp" payload={{ location: 'delivery' }} variant="secondary">Falar pelo WhatsApp</ButtonLink>
+            <ButtonLink href={buildWhatsappLink(whatsappMessages.information)} cta="delivery-whatsapp" event="ClickWhatsApp" payload={{ location: 'delivery' }} variant="secondary"><WhatsAppIcon size={17} /> Falar pelo WhatsApp</ButtonLink>
           </div>
         </div>
       </div>

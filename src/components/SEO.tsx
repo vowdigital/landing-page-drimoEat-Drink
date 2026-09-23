@@ -23,7 +23,16 @@ export function SEO() {
     const schema = {
       '@context': 'https://schema.org', '@type': 'Restaurant', name: restaurant.name,
       telephone: restaurant.phone, sameAs: [restaurant.instagram], areaServed: restaurant.city,
-      ...(restaurant.address ? { address: { '@type': 'PostalAddress', addressLocality: restaurant.city } } : {}),
+      ...(restaurant.address ? {
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: restaurant.address,
+          addressLocality: 'Dourados',
+          addressRegion: 'MS',
+          postalCode: '79800-000',
+          addressCountry: 'BR',
+        },
+      } : {}),
       ...(restaurant.hours.length ? { openingHours: restaurant.hours } : {}),
     }
     const existing = document.getElementById('drimo-restaurant-schema')
