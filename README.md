@@ -38,6 +38,7 @@ npm run lint      # ESLint
 npm test          # testes unitários em modo CI
 npm run test:watch
 npm run preview   # serve o diretório dist após o build
+npm run seo:generate # gera robots.txt e sitemap quando VITE_SITE_URL estiver configurada
 ```
 
 ## Conteúdo da página
@@ -73,6 +74,16 @@ Os principais pontos de configuração são:
 - `src/config/weeklyActions.ts`: ações semanais, estados ativos e itens “coming soon”.
 
 Informações voláteis devem ser alteradas nesses arquivos, e não diretamente nos componentes. Campos opcionais não confirmados — como horários e canonical — permanecem vazios e não são exibidos.
+
+### SEO e SEO local
+
+O projeto inclui metadados básicos, Open Graph, Twitter Card, schema `Restaurant`, schema `FAQPage`, endereço estruturado, Google Maps e `robots.txt`. Para publicar canonical, `og:url` e `sitemap.xml` com o domínio correto, copie `.env.example` para `.env` e preencha:
+
+```env
+VITE_SITE_URL=https://www.seudominio.com.br
+```
+
+O valor é usado pelo componente de SEO e pelo script `seo:generate`. Não use o endereço do repositório GitHub como canonical se a página estiver publicada em outro domínio.
 
 ## Qualidade e validação
 
